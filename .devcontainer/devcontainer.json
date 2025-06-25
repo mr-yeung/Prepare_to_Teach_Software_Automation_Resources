@@ -5,8 +5,9 @@
     "storage": "32gb"
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "python3 -m pip install --no-cache-dir -r requirements.txt",
-  "postCreateCommand": "sudo apt-get -q -y update && sudo apt-get -q -y install --no-install-recommends graphviz && sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/*",
+  "onCreateCommand": "sudo apt-get -q -y update && sudo apt-get -q -y install --no-install-recommends graphviz && sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* && python3 -m pip install --no-cache-dir -r requirements.txt",
+  "updateContentCommand": "",
+  "postCreateCommand": "",
   "postAttachCommand": "",
   "portsAttributes": {
     "8888": {
@@ -39,12 +40,12 @@
         "workbench.colorTheme": "Default Dark+",
         "workbench.iconTheme": "vscode-icons",
         "github.copilot.enable": {
+          "*": true,
           "python": false,
           "html": false,
           "css": false,
-          "SQL": false
-        },
-        "chat.agent.enabled": false
+          "sql": false
+        }
       },
       "extensions": [
         "McCarter.start-git-bash",
@@ -70,9 +71,12 @@
         "bierner.markdown-mermaid",
         "ms-toolsai.vscode-jupyter-powertoys",
         "narasimapandiyan.jetbrainsmono",
-        "tal7aouy.icons"
+        "vscode-icons-team.vscode-icons"
       ]
     }
   },
-  "forwardPorts": [8888]
+  "forwardPorts": [8888],
+  "remoteEnv": {
+    "PIP_NO_CACHE_DIR": "1"
+  }
 }
