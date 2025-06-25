@@ -4,9 +4,9 @@
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "python3 -m pip install -r requirements.txt && sudo apt-get -q -y update && sudo apt-get -q -y install graphviz",
-  "postCreateCommand": "",
-  "postAttachCommand": {},
+  "updateContentCommand": "python3 -m pip install -r requirements.txt",
+  "postCreateCommand": "sudo apt-get -q -y update && sudo apt-get -q -y install graphviz",
+  "postAttachCommand": "",
   "portsAttributes": {
     "8888": {
       "label": "Environment"
@@ -35,20 +35,21 @@
         },
         "editor.fontFamily": "JetBrains Mono",
         "terminal.integrated.fontFamily": "monospace",
-      	"workbench.colorTheme": "Default Dark+",
-      	"workbench.iconTheme": "vscode-icons",
-      	"github.copilot.enable": {
-      		"python": false,
-      		"html": false,
-      		"css": false,
-      		"SQL": false
-      	},
+        "workbench.colorTheme": "Default Dark+",
+        "workbench.iconTheme": "vscode-icons",
+        "github.copilot.enable": {
+          "python": false,
+          "html": false,
+          "css": false,
+          "SQL": false
+        },
         "chat.agent.enabled": false
       },
       "extensions": [
         "McCarter.start-git-bash",
         "yy0931.vscode-sqlite3-editor",
         "ms-python.python",
+        "ms-python.black-formatter",
         "esbenp.prettier-vscode",
         "oderwat.indent-rainbow",
         "mathematic.vscode-pdf",
