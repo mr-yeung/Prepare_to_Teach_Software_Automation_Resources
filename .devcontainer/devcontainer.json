@@ -1,11 +1,12 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "hostRequirements": {
-    "cpus": 4
+    "cpus": 4,
+    "storage": "32gb"
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "python3 -m pip install -r requirements.txt",
-  "postCreateCommand": "sudo apt-get -q -y update && sudo apt-get -q -y install graphviz",
+  "updateContentCommand": "python3 -m pip install --no-cache-dir -r requirements.txt",
+  "postCreateCommand": "sudo apt-get -q -y update && sudo apt-get -q -y install --no-install-recommends graphviz && sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/*",
   "postAttachCommand": "",
   "portsAttributes": {
     "8888": {
