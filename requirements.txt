@@ -4,7 +4,6 @@ pandas
 scikit-learn
 tensorflow
 pydot
-graphviz
 pillow
 ipympl
 ipywidgets
